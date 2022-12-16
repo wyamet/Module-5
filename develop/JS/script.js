@@ -1,11 +1,14 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+$(document).ready(function () {
+
+  
 var timeNow = Date.now();
+console.log(timeNow);
 
-
-const currentTime = dayjs();
-console.log(currentTime.format('DD-MM-YYYY H:mm:ss'))
+let currentTime = dayjs();
+console.log(currentTime.format('DD-MM-YYYY H:mm:ss'));
 
 // dayjs.format('DD-MM-YYYY H:mm:ss')
 // $('#rightNow').text(currentTime);
@@ -32,4 +35,4 @@ console.log(currentTime.format('DD-MM-YYYY H:mm:ss'))
 //     // attribute of each time-block be used to do this?
 //     //
 //     // TODO: Add code to display the current date in the header of the page.
-//   });
+  });
