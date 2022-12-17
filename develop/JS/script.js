@@ -9,10 +9,10 @@ $(document).ready(function () {
 var timeDisplayEl = $("#currentTime");
 console.log(timeDisplayEl)
 
-
+//display the current time
 function getCurrentTime() {
 var rightNow = dayjs().format('MMM : DD, YYYY [at] hh:mm:ss');
-// timeDisplayEl.text(rightNow);
+
 
 console.log(rightNow);
 }
@@ -25,9 +25,25 @@ function blockColor(){
   var currentTime = dayjs().hour();
   $(".time-block").each(function(){
     var currentBlock = parseInt($(this).attr("id").split("-")[1])
-    console.log(currentBlock)
-  })
-  console.log(currentTime);
+    if (currentBlock < currentTime) {
+      $(this).removeClass("present");
+      $(this).removeClass("future");
+      $(this).addClass("past");
+    } else if (currentBlock === currentTime) {
+      $(this).removeClass("future");
+      $(this).removeClass("past");
+      $(this).addClass("present");
+    } else (currentBlock > currentTime) 
+      $(this).removeClass("past");
+      $(this).removeClass("present");
+      $(this).addClass("future");
+    });
+
+
+
+    // console.log(currentBlock)
+  // console.log(currentTime);
+  
 }
 
 blockColor();
