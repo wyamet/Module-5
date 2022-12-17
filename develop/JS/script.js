@@ -6,14 +6,14 @@ $(document).ready(function () {
   
 
 
-var timeDisplayEl = $("#currentTime");
-console.log(timeDisplayEl)
+// var timeDisplayEl = $("#currentTime");
+// console.log(timeDisplayEl)
 
-var rightNow = dayjs().format('MMM : DD, YYYY [at] hh:mm:ss');
+var rightNow = dayjs().format('MMM DD YYYY hh:mm:ss a');
 $("#currentTime").text(rightNow);
 
 
-// setInterval(rightNow, 1000);
+// setInterval(rightNow, 10000);
 
 // console.log(rightNow);
 // }
@@ -64,7 +64,7 @@ $("#hour-15 .description").val(localStorage.getItem("hour-15"))
 $("#hour-16 .description").val(localStorage.getItem("hour-16"))
 $("#hour-17 .description").val(localStorage.getItem("hour-17"))
 
-};
+});
 //     // TODO: Add a listener for click events on the save button. This code should
 //     // use the id in the containing time-block as a key to save the user input in
 //     // local storage. HINT: What does `this` reference in the click listener
