@@ -9,7 +9,7 @@ $(document).ready(function () {
 // var timeDisplayEl = $("#currentTime");
 // console.log(timeDisplayEl)
 
-var rightNow = dayjs().format('MMM DD YYYY hh:mm:ss a');
+var rightNow = dayjs().format('MMM:DD:YYYY ');
 $("#currentTime").text(rightNow);
 
 
