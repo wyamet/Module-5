@@ -9,16 +9,14 @@ $(document).ready(function () {
 var timeDisplayEl = $("#currentTime");
 console.log(timeDisplayEl)
 
-//display the current time
-function getCurrentTime() {
 var rightNow = dayjs().format('MMM : DD, YYYY [at] hh:mm:ss');
+$("#currentTime").text(rightNow);
 
+// setInterval(rightNow, 1000);
 
-console.log(rightNow);
-}
-getCurrentTime();
+// console.log(rightNow);
+// }
 
-// setInterval(getCurrentTime, 1000);
 
 
 function blockColor(){
