@@ -12,41 +12,37 @@ console.log(timeDisplayEl)
 var rightNow = dayjs().format('MMM : DD, YYYY [at] hh:mm:ss');
 $("#currentTime").text(rightNow);
 
+
 // setInterval(rightNow, 1000);
 
 // console.log(rightNow);
 // }
 
 
-
+// change the color of the block to match the time display
 function blockColor(){
-  var currentTime = dayjs().hour();
+  var timeCurrent = dayjs().hour();
   $(".time-block").each(function(){
     var currentBlock = parseInt($(this).attr("id").split("-")[1])
-    if (currentBlock < currentTime) {
+    if (currentBlock < timeCurrent) { 
       $(this).removeClass("present");
       $(this).removeClass("future");
       $(this).addClass("past");
-    } else if (currentBlock === currentTime) {
+    } else if (currentBlock === timeCurrent) {
       $(this).removeClass("future");
       $(this).removeClass("past");
       $(this).addClass("present");
-    } else (currentBlock > currentTime) 
+    } else (currentBlock > timeCurrent) 
       $(this).removeClass("past");
       $(this).removeClass("present");
       $(this).addClass("future");
     });
-
-
-
-    // console.log(currentBlock)
-  // console.log(currentTime);
+  };
   
-}
 
 blockColor();
 
-
+// save to localStorage on the click of the save button
 $(function () {
   $('.saveBtn').on('click', function (){
     console.log($(this))
@@ -56,7 +52,7 @@ $(function () {
     
   });
 });
-
+//grab elements from local storage.
 $("#hour-8 .description").val(localStorage.getItem("hour-8"))
 $("#hour-9 .description").val(localStorage.getItem("hour-9"))
 $("#hour-10 .description").val(localStorage.getItem("hour-10"))
@@ -68,7 +64,7 @@ $("#hour-15 .description").val(localStorage.getItem("hour-15"))
 $("#hour-16 .description").val(localStorage.getItem("hour-16"))
 $("#hour-17 .description").val(localStorage.getItem("hour-17"))
 
-
+};
 //     // TODO: Add a listener for click events on the save button. This code should
 //     // use the id in the containing time-block as a key to save the user input in
 //     // local storage. HINT: What does `this` reference in the click listener
@@ -87,4 +83,3 @@ $("#hour-17 .description").val(localStorage.getItem("hour-17"))
 //     // attribute of each time-block be used to do this?
 //     //
 //     // TODO: Add code to display the current date in the header of the page.
-});
