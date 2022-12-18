@@ -6,8 +6,7 @@ $(document).ready(function () {
   
 
 
-// var timeDisplayEl = $("#currentTime");
-// console.log(timeDisplayEl)
+//grab dayjs current time and assign to variable
 
 var rightNow = dayjs().format('MMM:DD:YYYY ');
 $("#currentTime").text(rightNow);
@@ -15,13 +14,12 @@ $("#currentTime").text(rightNow);
 
 // setInterval(rightNow, 10000);
 
-// console.log(rightNow);
-// }
 
 
 // change the color of the block to match the time display
 function blockColor(){
   var timeCurrent = dayjs().hour();
+  // parse the id attribute into an integer that compares with the dayjs hour.
   $(".time-block").each(function(){
     var currentBlock = parseInt($(this).attr("id").split("-")[1])
     if (currentBlock < timeCurrent) { 
@@ -52,7 +50,7 @@ $(function () {
     
   });
 });
-//grab elements from local storage.
+//grab element data from local storage.
 $("#hour-8 .description").val(localStorage.getItem("hour-8"))
 $("#hour-9 .description").val(localStorage.getItem("hour-9"))
 $("#hour-10 .description").val(localStorage.getItem("hour-10"))
