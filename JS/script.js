@@ -21,6 +21,7 @@ function blockColor(){
   var timeCurrent = dayjs().hour();
   // parse the id attribute into an integer that compares with the dayjs hour.
   $(".time-block").each(function(){
+    
     var currentBlock = parseInt($(this).attr("id").split("-")[1])
     if (currentBlock < timeCurrent) { 
       $(this).removeClass("present");
@@ -33,12 +34,10 @@ function blockColor(){
     } else (currentBlock > timeCurrent) 
       $(this).removeClass("past");
       $(this).removeClass("present");
-      $(this).addClass("future");
-    });
+      $(this).addClass("future")
+    })
   };
-  
-
-blockColor();
+  blockColor();
 
 // save to localStorage on the click of the save button
 $(function () {
